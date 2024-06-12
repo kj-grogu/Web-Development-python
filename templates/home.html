@@ -16,12 +16,24 @@
   </head>
   <body>
     <div class = "cointainer">
-      <h1 class="text-center mt-2 mb-4">Tosa Careers</h1>
+      <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
       <img class="img-fluid" alt="Fluid image" id= "banner" src = "/static/banner.jpg">
       <h2 class="text-center mt-2 mb-4">About Tosa</h2>
       <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet facilisis magna etiam tempor orci eu lobortis elementum. Luctus accumsan tortor posuere ac ut consequat semper. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. At varius vel pharetra vel. Eget est lorem ipsum dolor sit amet. Pellentesque pulvinar pellentesque habitant morbi tristique senectus. Diam vulputate ut pharetra sit amet aliquam id diam maecenas. Lobortis mattis aliquam faucibus purus in massa tempor nec. Libero enim sed faucibus turpis in eu mi bibendum. Viverra aliquet eget sit amet tellus cras adipiscing enim eu.</p>
       <h2 class="text-center mt-2 mb-4"">Open Positions</h2>
-      <p>TODO - Show the jobs here</p>
+        <div>
+        {% for job in jobs %} 
+        <div style="margin-bottom:16px;">
+          <h4 style = "color: rgb(120, 120, 120); margin-bottom:4px;">{{job['title']}}</h4>
+          <div>
+            <b>Location:</b>{{job['location']}}
+          </div>
+          <div>
+            <b>Salary:</b>{{job['salary']}}
+          </div>
+        </div>
+        {% endfor %} 
+        </div>
       <div class="text-center">
         <button class="btn btn-primary btn-lg">Contact Us</button>
         <p class="mt-4">Copyright 2024, Tosa Careers</p>
